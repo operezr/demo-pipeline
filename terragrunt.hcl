@@ -12,6 +12,8 @@ generate "provider" {
         source  = "hashicorp/google"
         version = "~> 3.79"
       }
+    }
+  }
   EOF
 }
 
@@ -22,9 +24,9 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket  = "pdemo-2022-terraform"
-    prefix  = "terraform/${path_relative_to_include()}"
-    project = "pdemo-2022"
-    region  = "US"
+    bucket   = "pdemo-2022-terraform"
+    prefix   = "terraform/${path_relative_to_include()}"
+    project  = "pdemo-2022"
+    location = "US"
   }
 }
